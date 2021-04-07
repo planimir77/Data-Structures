@@ -59,7 +59,7 @@ public class CircularQueue<T>
             throw new InvalidOperationException();
         }
         var item = this.elements[this.startIndex];
-        this.elements[this.startIndex] = default;
+        //this.elements[this.startIndex] = default;
         this.Count--;
         if (this.Count > 0)
         {
