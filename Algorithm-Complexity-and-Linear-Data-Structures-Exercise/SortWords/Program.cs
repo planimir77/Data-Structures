@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SortWords
 {
@@ -6,7 +7,11 @@ namespace SortWords
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var orderedList = Console.ReadLine()?
+                .Split()
+                .OrderBy(x=> x).ToList();
+
+            Console.WriteLine(String.Join(" ", orderedList));
         }
     }
 }
