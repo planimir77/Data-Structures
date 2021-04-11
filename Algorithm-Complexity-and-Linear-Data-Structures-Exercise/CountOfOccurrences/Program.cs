@@ -6,7 +6,10 @@ namespace CountOfOccurrences
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var countOfOccurrences = new CountOfOccurrences();
+            var input = Console.ReadLine();
+            var result = countOfOccurrences.GetCount(input);
+            Console.WriteLine(result);
         }
     }
 }
