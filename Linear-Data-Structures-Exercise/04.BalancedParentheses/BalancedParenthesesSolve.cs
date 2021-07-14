@@ -7,7 +7,28 @@
     {
         public bool AreBalanced(string parentheses)
         {
-            throw new NotImplementedException();
+            var stack = new Stack<char>();
+            foreach (var currentChar in parentheses)
+            {
+                if (currentChar == '(' || currentChar == '{' || currentChar == '[')
+                {
+                    stack.Push(currentChar);
+                }
+                else
+                { 
+                    var lastChar = stack.Count == 0 ? ' ': stack.Peek();
+
+                    if (lastChar == '(' && currentChar == ')' || lastChar == '{' && currentChar == '}' || lastChar == '[' && currentChar == ']')
+                    {
+                        var temp = stack.Pop();
+                    }
+                    else
+                    {
+                        stack.Push(currentChar);
+                    }
+                }
+            }
+            return stack.Count == 0 ;
         }
     }
 }
